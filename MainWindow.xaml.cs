@@ -7,7 +7,6 @@ namespace calculator
     public partial class MainWindow : Window
     {
         public float Result = 0;
-        public float CurrentNumber = 0;
         public string CurrentNumberString;
         public string currentFunction = "";
         public string leftNumberString = "";
