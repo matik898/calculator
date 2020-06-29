@@ -11,7 +11,6 @@ namespace calculator
         public string CurrentNumberString;
         public string currentFunction = "";
         public string leftNumberString = "";
-        public string rightNumberString = "";
         public bool isCleared = false;
 
         public MainWindow()

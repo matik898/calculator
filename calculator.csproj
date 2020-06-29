@@ -6,4 +6,9 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>C:\Users\Użytkownik\Desktop\calculatorBuild\build\</OutputPath>
+    <DocumentationFile>C:\Users\Użytkownik\Desktop\calculatorBuild\calculator\calculator.xml</DocumentationFile>
+  </PropertyGroup>
+
 </Project>
