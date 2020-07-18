@@ -165,16 +165,9 @@ namespace calculator
         /// </summary>
         public void Comma()
         {
-            bool existInString = false;
-
-            foreach (char el in this.CurrentNumberString)
-            {
-                if (el == ',')
-                {
-                    existInString = true;
-                }
-            }
-
+            ValidateString stringValidator = new ValidateString();
+            bool existInString = stringValidator.Validate(this.CurrentNumberString, ',');
+            
             if (!existInString)
             {
                 this.CurrentNumberString += ",";
@@ -252,18 +245,6 @@ namespace calculator
                     case "+":
                         {
                             return (float.Parse(this.leftNumberString) + float.Parse(this.CurrentNumberString)).ToString();
-                        }
-                    case "=":
-                        {
-                            return "";
-                        }
-                    case ",":
-                        {
-                            return "";
-                        }
-                    case "+/-":
-                        {
-                            return "";
                         }
                     default: return "";
                 }
@@ -435,5 +416,31 @@ namespace calculator
 
 
         }
+        public class ValidateString
+        {
+            /// <summary>
+            /// Check if string has a specified character
+            /// </summary>
+            /// <param name="value">text</param>
+            /// <param name="character">character</param>
+            /// <returns></returns>
+            public bool Validate(string value, char character)
+            {
+                bool existInString = false;
+
+                foreach (char el in value)
+                {
+                    if (el == character)
+                    {
+                        existInString = true;
+                    }
+                }
+
+                return existInString;
+            }
+        }
     }
+
+   
+
 }
